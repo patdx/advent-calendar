@@ -19,7 +19,13 @@ export default function Index() {
 
   return (
     <>
-      <div className="flex h-screen justify-center items-center">
+      <div
+        className="flex h-screen justify-center items-center"
+        data-instant={DateTime.now().toJSON()}
+        data-local-time={DateTime.now().toLocaleString(
+          DateTime.TIME_24_WITH_SECONDS
+        )}
+      >
         <div className="grid grid-cols-7 max-w-md">
           {new Array(offset).fill(null).map((_, index) => (
             <div key={index} />
@@ -28,9 +34,9 @@ export default function Index() {
             <div
               key={day.toISODate()}
               className={clsx(
-                "text-center text-5x1 font-bold p-4 tabular-nums",
+                "flex flex-col justify-center text-center w-16 h-16 text-5x1 font-bold tabular-nums rounded",
                 day.toISODate() === DateTime.now().toISODate() &&
-                  "text-red-500 bg-text-red-200 shadow"
+                  "text-red-500 bg-red-200 border-2 border-red-300 border"
               )}
             >
               {day.day}

@@ -7,9 +7,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-// import type { LinksFunction } from "@remix-run/cloudflare-pages"; // or cloudflare/deno
-
-// ...
 
 import styles from "./tailwind.css";
 
